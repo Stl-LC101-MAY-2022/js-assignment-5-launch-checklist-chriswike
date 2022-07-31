@@ -1,4 +1,3 @@
-// Write your helper functions here!
 require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
@@ -64,7 +63,6 @@ function formSubmission (document, list, pilot, copilot, fuelLevel, cargoLevel) 
         launchStatus.innerHTML = `Shuttle ready for launch`;
         launchStatus.style.color = `green`;
     }
-
 }
 
 async function myFetch() {

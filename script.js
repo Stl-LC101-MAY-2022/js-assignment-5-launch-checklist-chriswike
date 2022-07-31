@@ -1,5 +1,3 @@
-// Write your JavaScript code here!
-
 window.addEventListener("load", ()=> {
     const form = document.querySelector("form");
     form.addEventListener("submit", (event)=>{
@@ -13,14 +11,12 @@ window.addEventListener("load", ()=> {
     })
 
     let listedPlanets;
-   // Set listedPlanetsResponse equal to the value returned by calling myFetch()
     let listedPlanetsResponse = myFetch();
     listedPlanetsResponse.then((result) => {
         listedPlanets = result;
         console.log(listedPlanets);
     }).then(() => {
-        console.log(listedPlanets);
-// Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
+        //console.log(listedPlanets);
         let planet = pickPlanet(listedPlanets);
         let name = planet.name;
         let diameter = planet.diameter;
