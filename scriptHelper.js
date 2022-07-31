@@ -1,6 +1,6 @@
 require('isomorphic-fetch');
 
-function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
+(document, name, diameter, star, distance, moons, imageUrl) => addDestinationInfo {
     let missionTarget = document.getElementById('missionTarget');
     missionTarget.innerHTML = `
                 <h2>Mission Destination</h2>
@@ -15,7 +15,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                 `
 }
 
-function validateInput(testInput) {
+(testInput) => validateInput {
     // if (!testInput || /^\s*$/.test(testInput)) {
     if (!testInput || testInput.length === 0 ) {
         return 'Empty'
@@ -26,7 +26,7 @@ function validateInput(testInput) {
     }
 }
 
-function formSubmission (document, list, pilot, copilot, fuelLevel, cargoLevel) {
+(document, list, pilot, copilot, fuelLevel, cargoLevel) => formSubmission {
     let pilotStatus = document.getElementById('pilotStatus');
     let copilotStatus = document.getElementById('copilotStatus');
     let fuelStatus = document.getElementById('fuelStatus');
@@ -66,6 +66,7 @@ function formSubmission (document, list, pilot, copilot, fuelLevel, cargoLevel) 
 }
 
 async function myFetch() {
+//async function declarations can't use arrow functions
     let planetsReturned;
     planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
         return response.json()
@@ -73,7 +74,7 @@ async function myFetch() {
     return planetsReturned;
 }
 
-function pickPlanet(planets) {
+(planets) => pickPlanet {
     let planetPicked = Math.floor(Math.random() * planets.length);
     return planets[planetPicked];
 }
